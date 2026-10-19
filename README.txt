@@ -1,4 +1,1 @@
-MINA & MADONNA INVITATION FILES
-Keep all files in the same folder. Add your music as music.mp3 if you want background music.
-RSVP opens the guest's email app with the form details prepared; it does not store responses automatically.
-Upload these files to the root of your GitHub Pages repository to publish.
+Mina & Madonna wedding invitation website files. Upload index.html, style.css, script.js, and childhood.jpg to the root of your GitHub Pages repository. The first screen is a vintage olive-and-gold envelope cover with no wedding details; tap “Open the letter” to scroll into the invitation.
