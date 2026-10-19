@@ -6,7 +6,7 @@ Included:
 - Animated envelope and wax seal opening
 - Scroll reveal transitions and floating photo cards
 - Supplied childhood and engagement photos, fixed in the story (not clickable/flipping)
-- Church illustration, event date/time, Google Maps link
+- Supplied church photo, event date/time, Google Maps link
 - Live countdown to 22 November 2026 at 7:00 PM Cairo time
 - Brown-to-Butter-Yellow dress-code palette (all seven shades)
 - Final RSVP / wishes link
