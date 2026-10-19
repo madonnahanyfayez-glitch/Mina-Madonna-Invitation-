@@ -1,1 +1,6 @@
-Mina & Madonna wedding invitation website files. Upload index.html, style.css, script.js, and childhood.jpg to the root of your GitHub Pages repository. The first screen is a vintage olive-and-gold envelope cover with no wedding details; tap “Open the letter” to scroll into the invitation.
+Mina & Madonna Animated Wedding Invitation
+
+Upload index.html, style.css, script.js and the included image files to the root of your GitHub Pages repository.
+Keep childhood.jpg, engagement.jpg, and church-interior.jpg beside index.html.
+The invitation uses burgundy and olive styling. Dress code palette is Dark Brown to Butter Yellow.
+Note: music.mp3 is optional and is not included; the rest of the invitation works without it.
