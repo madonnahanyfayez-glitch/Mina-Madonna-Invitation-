@@ -187,3 +187,9 @@
   .invitation-first-page{transition:none!important}
   .cover.open .invitation-first-page{visibility:visible;opacity:1}
 }
+
+
+/* Discreet soundtrack control */
+.music-toggle{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid #c6a66b;border-radius:30px;background:#572034;color:#fff0d9;font:12px 'Cormorant Garamond',Georgia,serif;letter-spacing:1px;box-shadow:0 4px 14px #0003;cursor:pointer}
+.music-toggle span{font-size:11px}
+.gatz-map{margin-top:20px}

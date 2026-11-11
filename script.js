@@ -4,6 +4,7 @@ const tapNote = document.getElementById('tapNote');
 function openInvitation() {
   if (!cover || cover.classList.contains('open')) return;
   cover.classList.add('open');
+  startWeddingMusic();
   [openBtn, tapNote].forEach(button => {
     if (button) {
       button.setAttribute('aria-expanded', 'true');
@@ -36,3 +37,24 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// Wedding soundtrack: starts after the guest opens the invitation (a user gesture).
+const weddingMusic = document.getElementById('weddingMusic');
+const musicToggle = document.getElementById('musicToggle');
+function updateMusicButton(isPlaying) {
+  if (!musicToggle) return;
+  musicToggle.setAttribute('aria-pressed', String(isPlaying));
+  musicToggle.innerHTML = isPlaying ? '♫ <span>Pause music</span>' : '♫ <span>Play music</span>';
+}
+async function startWeddingMusic() {
+  if (!weddingMusic) return;
+  try { await weddingMusic.play(); updateMusicButton(true); }
+  catch (_) { updateMusicButton(false); }
+}
+if (musicToggle && weddingMusic) {
+  musicToggle.addEventListener('click', async () => {
+    if (weddingMusic.paused) await startWeddingMusic();
+    else { weddingMusic.pause(); updateMusicButton(false); }
+  });
+  weddingMusic.addEventListener('ended', () => updateMusicButton(false));
+}

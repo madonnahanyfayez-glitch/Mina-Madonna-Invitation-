@@ -1,13 +1,11 @@
-MINA & MADONNA — UPDATED WEDDING INVITATION
+Mina & Madonna — updated wedding invitation
 
-Upload ALL files in this folder to the ROOT of your GitHub repository, replacing the existing files.
-Keep the image files beside index.html (do not put them in a subfolder).
-Main files: index.html, style.css, script.js
-Required images: burgundy-envelope.png, gold-wax-seal.png, childhood.jpg, engagement.jpg, church-interior.jpg
+Upload every file in this folder to the ROOT of your existing GitHub repository, replacing the old files. Keep all images and a-thousand-years.mp3 beside index.html.
 
 Updates included:
-- Fixed the cover reveal so the cream invitation page stays hidden until the envelope opens.
-- Removed church name/time from the cover.
-- Added the optional, no-pressure Gatz message.
-- Kept EGP 650 per person including one meal and one soft drink.
-- Removed the church map link from the final page only; it remains in the church details section.
+- Replaced the engagement photo with the new photo you sent.
+- Added your supplied A Thousand Years MP3. Music attempts to start when the guest opens the envelope; the guest can pause/play using the music button. Some browsers may require the guest to tap Play because of autoplay restrictions.
+- Shortened the Gatz invitation text and clarified that the after-party is optional.
+- Restored the Gatz Get Directions link.
+
+Keep index.html, style.css, script.js, all image files, and a-thousand-years.mp3 together in the repository root.
