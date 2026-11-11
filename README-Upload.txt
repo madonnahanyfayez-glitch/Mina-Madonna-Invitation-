@@ -9,3 +9,5 @@ Updates included:
 - Restored the Gatz Get Directions link.
 
 Keep index.html, style.css, script.js, all image files, and a-thousand-years.mp3 together in the repository root.
+
+New in this version: a matching burgundy-framed “You’re Cordially Invited” animated page between the opening cover and story page. The engagement photo is also updated. Upload every file in this ZIP to the repository root, replacing the existing files.
