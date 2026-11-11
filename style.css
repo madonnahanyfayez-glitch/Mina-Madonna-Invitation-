@@ -121,3 +121,69 @@
 @keyframes sealLift{0%{transform:translate(-50%,-50%) scale(1);opacity:1}45%{transform:translate(-50%,-70%) scale(1.12);opacity:1}100%{transform:translate(-50%,-110%) rotate(25deg) scale(.25);opacity:0}}
 @media(max-width:480px){.wax-seal-art{width:clamp(112px,35vw,160px)}.seal-hit-area{width:clamp(112px,35vw,160px);height:clamp(112px,35vw,160px)}.tap-note{bottom:7%;font-size:21px;padding:9px 22px}}
 @media(prefers-reduced-motion:reduce){.envelope-panel,.wax-seal-art,.seal-hit-area,.tap-note{transition:none!important;animation:none!important}}
+
+
+/* Optional post-ceremony gathering note */
+.gatz-optional{max-width:510px;margin:22px auto 10px;padding:20px 22px;border-top:1px solid #c6a66b;border-bottom:1px solid #c6a66b;color:#685744;font:italic 18px/1.75 'Cormorant Garamond',Georgia,serif;text-align:center}
+@media(max-width:480px){.gatz-optional{font-size:17px;line-height:1.65;padding:17px 15px}}
+
+
+/* Professional cover reveal: no cream/white centre is visible under the closed envelope. */
+.invitation-first-page{
+  visibility:hidden;
+  opacity:0;
+  z-index:1;
+  background:radial-gradient(ellipse at 50% 42%,#fff9ed 0%,#f3e7d3 68%,#e7d5b9 100%);
+  transition:opacity .95s ease,visibility 0s linear .95s;
+}
+.cover.open .invitation-first-page{
+  visibility:visible;
+  opacity:1;
+  transition:opacity 1s ease .12s,visibility 0s;
+}
+.cover.open .envelope-art{z-index:2}
+.cover.open .panel-left{transform:translateX(-110%) rotate(-1.5deg);opacity:0}
+.cover.open .panel-right{transform:translateX(110%) rotate(1.5deg);opacity:0}
+.invitation-first-page .cover-names{
+  letter-spacing:.2px;
+  text-shadow:0 2px 0 #fff8,0 8px 22px #4b382015;
+}
+.invitation-first-page .cover-invitation{max-width:340px}
+.invitation-first-page .enter-link{
+  margin-top:22px;
+  box-shadow:0 5px 14px #4b1c2a20;
+}
+.gatz-details{
+  max-width:360px;
+  margin:30px auto 22px;
+  padding:20px 12px;
+  border-top:1px solid #c6a66b;
+  border-bottom:1px solid #c6a66b;
+  text-align:center;
+}
+.gatz-details p{margin:0}
+.gatz-details span{
+  display:block;
+  font-size:10px;
+  letter-spacing:3px;
+  color:#536044;
+  margin-bottom:9px;
+}
+.gatz-details strong{
+  font-size:21px;
+  font-weight:500;
+  color:#70283f;
+}
+.gatz-details .gatz-includes{
+  margin-top:10px;
+  font-size:15px;
+  font-style:italic;
+  color:#6e5c49;
+}
+@media(max-width:480px){
+  .gatz-details strong{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){
+  .invitation-first-page{transition:none!important}
+  .cover.open .invitation-first-page{visibility:visible;opacity:1}
+}
