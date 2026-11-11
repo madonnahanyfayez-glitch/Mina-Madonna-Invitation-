@@ -4,6 +4,7 @@ if (cover && openBtn) {
   openBtn.setAttribute('aria-expanded', 'false');
   openBtn.addEventListener('click', () => {
     cover.classList.add('open');
+    openBtn.disabled = true;
     openBtn.setAttribute('aria-expanded', 'true');
     const reveal = document.getElementById('coverReveal');
     if (reveal) reveal.setAttribute('aria-live', 'polite');
