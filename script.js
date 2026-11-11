@@ -3,11 +3,15 @@ const openBtn = document.getElementById('openBtn');
 if (cover && openBtn) {
   openBtn.setAttribute('aria-expanded', 'false');
   openBtn.addEventListener('click', () => {
+    if (cover.classList.contains('open')) return;
     cover.classList.add('open');
-    openBtn.disabled = true;
     openBtn.setAttribute('aria-expanded', 'true');
-    const reveal = document.getElementById('coverReveal');
-    if (reveal) reveal.setAttribute('aria-live', 'polite');
+    openBtn.disabled = true;
+    // Let the envelope unfold, then gently reveal the invitation beneath it.
+    window.setTimeout(() => {
+      const firstPage = document.getElementById('invitationFirstPage');
+      if (firstPage) firstPage.classList.add('revealed');
+    }, 650);
   });
 }
 const revealObserver = new IntersectionObserver(entries => {

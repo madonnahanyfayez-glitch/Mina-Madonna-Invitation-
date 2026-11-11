@@ -1,5 +1,1 @@
-Mina & Madonna — Vintage Wax Seal Invitation
-
-Upload all files in this ZIP to the ROOT of your GitHub repository, replacing the existing files when asked.
-Keep the three JPG images alongside index.html (not inside a folder).
-The first screen is now a full-page vintage paper invitation with an olive wax seal. Tap the seal to lift it and reveal the invitation.
+Mina & Madonna wedding invitation. Upload all files in this folder to the ROOT of your GitHub repository and replace the existing files. Keep burgundy-envelope.png, childhood.jpg, engagement.jpg and church-interior.jpg beside index.html. The golden seal is clickable; the two embroidered burgundy flaps slide apart to reveal the invitation underneath.

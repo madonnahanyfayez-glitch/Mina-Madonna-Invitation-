@@ -67,3 +67,36 @@
 .cover.open .cover-footer{opacity:.55}
 @keyframes seal-lift{0%{transform:scale(1) rotate(0);opacity:1}45%{transform:translateY(-22px) rotate(18deg) scale(1.12)}100%{transform:translateY(-45px) rotate(35deg) scale(.45);opacity:0}}
 @media(max-width:480px){.cover{padding:28px 22px}.cover-inner{min-height:calc(100svh - 90px)}.cover-flower{font-size:52px}.flower-left{left:6%;top:11%}.flower-right{right:6%;bottom:11%}.cover-invitation{font-size:17px}.seal-button{width:80px;height:80px}}
+
+
+/* Burgundy embroidered envelope cover: the two scalloped panels slide apart on seal tap */
+.cover{position:relative;min-height:100svh;height:100svh;padding:0;display:block;overflow:hidden;background:#481b25;color:#f3e6ce;isolation:isolate}
+.cover:before{content:"";position:absolute;inset:12px;border:1px solid #c7a46a;z-index:5;pointer-events:none}
+.invitation-first-page{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:45px 25px;background:radial-gradient(ellipse at center,#fff7e8 0%,#f0e1c8 72%,#dfc9a8 100%);color:#46352b;opacity:1}
+.invitation-first-page .small-caps{color:#75613f}
+.cover-rule{display:flex;align-items:center;gap:13px;width:min(230px,65%);margin:14px auto;color:#b89a62}
+.cover-rule:before,.cover-rule:after{content:"";height:1px;background:#b89a62;flex:1}
+.cover-intro{font:italic 21px 'Cormorant Garamond',serif;color:#7a654a;margin:5px 0 10px}
+.cover-names{font:clamp(58px,12vw,88px)/.9 'Great Vibes',cursive;font-weight:400;color:#303b2d;margin:8px 0 15px}
+.cover-names em{font:italic 27px 'Cormorant Garamond',serif;color:#a58a58}
+.cover-date{font-size:13px;letter-spacing:5px;color:#70283f;margin:12px 0}
+.cover-invitation{font:italic 18px/1.55 'Cormorant Garamond',serif;color:#685744;margin:8px 0 14px}
+.cover-footer{font-size:9px;letter-spacing:2px;color:#796749;margin:14px 0}
+.envelope-art{position:absolute;inset:0;z-index:2;pointer-events:none;transition:opacity .25s}
+.envelope-panel{position:absolute;inset:0;background-image:url('burgundy-envelope.png');background-size:100% 100%;background-repeat:no-repeat;will-change:transform,opacity;transition:transform 1.35s cubic-bezier(.68,-.05,.25,1),opacity .9s}
+.panel-left{clip-path:polygon(0 0,53% 0,48% 12%,44% 25%,48% 39%,50% 50%,47% 62%,43% 77%,49% 89%,53% 100%,0 100%);}
+.panel-right{clip-path:polygon(47% 0,100% 0,100% 100%,47% 100%,53% 89%,57% 77%,53% 62%,50% 50%,52% 39%,56% 25%,52% 12%);}
+.seal-hit-area{position:absolute;z-index:4;left:50%;top:45%;transform:translate(-50%,-50%);width:clamp(100px,24vw,155px);height:clamp(100px,24vw,155px);border:0;border-radius:50%;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.seal-hit-area:focus-visible{outline:2px solid #e4c27f;outline-offset:7px}
+.tap-note{position:absolute;z-index:4;left:0;right:0;bottom:8%;text-align:center;color:#f2d9a6;font:italic 20px 'Great Vibes',cursive;letter-spacing:1px;text-shadow:0 2px 6px #1d0c10;pointer-events:none;animation:sealHint 2s ease-in-out infinite}
+.cover.open .panel-left{transform:translateX(-105%) rotate(-2deg);opacity:.1}
+.cover.open .panel-right{transform:translateX(105%) rotate(2deg);opacity:.1}
+.cover.open .envelope-art{transition-delay:.25s}
+.cover.open .seal-hit-area{animation:sealLift .65s ease forwards;pointer-events:none}
+.cover.open .tap-note{opacity:0;transition:opacity .3s}
+@keyframes sealLift{0%{transform:translate(-50%,-50%) scale(1);opacity:1}45%{transform:translate(-50%,-68%) scale(1.12);opacity:1}100%{transform:translate(-50%,-95%) scale(.25);opacity:0}}
+@keyframes sealHint{0%,100%{opacity:.65}50%{opacity:1}}
+@media(max-width:480px){.cover{min-height:100svh;height:100svh}.invitation-first-page{padding:38px 18px}.cover-invitation{font-size:17px}.tap-note{bottom:8%;font-size:19px}}
+@media(prefers-reduced-motion:reduce){.envelope-panel,.seal-hit-area{transition:none!important;animation:none!important}}
+
+.invitation-first-page{transition:filter .8s ease,transform 1s ease}.cover.open .invitation-first-page{filter:none;transform:scale(1.015)}
