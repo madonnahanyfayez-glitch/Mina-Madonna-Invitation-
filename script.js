@@ -1,19 +1,18 @@
 const cover = document.getElementById('cover');
 const openBtn = document.getElementById('openBtn');
-if (cover && openBtn) {
-  openBtn.setAttribute('aria-expanded', 'false');
-  openBtn.addEventListener('click', () => {
-    if (cover.classList.contains('open')) return;
-    cover.classList.add('open');
-    openBtn.setAttribute('aria-expanded', 'true');
-    openBtn.disabled = true;
-    // Let the envelope unfold, then gently reveal the invitation beneath it.
-    window.setTimeout(() => {
-      const firstPage = document.getElementById('invitationFirstPage');
-      if (firstPage) firstPage.classList.add('revealed');
-    }, 650);
+const tapNote = document.getElementById('tapNote');
+function openInvitation() {
+  if (!cover || cover.classList.contains('open')) return;
+  cover.classList.add('open');
+  [openBtn, tapNote].forEach(button => {
+    if (button) {
+      button.setAttribute('aria-expanded', 'true');
+      button.disabled = true;
+    }
   });
 }
+if (openBtn) openBtn.addEventListener('click', openInvitation);
+if (tapNote) tapNote.addEventListener('click', openInvitation);
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

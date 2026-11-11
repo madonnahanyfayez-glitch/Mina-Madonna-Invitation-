@@ -100,3 +100,24 @@
 @media(prefers-reduced-motion:reduce){.envelope-panel,.seal-hit-area{transition:none!important;animation:none!important}}
 
 .invitation-first-page{transition:filter .8s ease,transform 1s ease}.cover.open .invitation-first-page{filter:none;transform:scale(1.015)}
+
+
+/* FIX: seamless envelope opening, with a separate gold seal and two open controls */
+.cover{background:#481b25!important;overflow:hidden!important}
+.envelope-art{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.envelope-panel{position:absolute;inset:0;background-image:url('burgundy-envelope.png');background-size:100% 100%;background-position:center;background-repeat:no-repeat;will-change:transform;transition:transform 1.25s cubic-bezier(.7,0,.25,1),opacity 1s}
+/* Exact half-panels: no pointed cut-outs, so the cream page cannot show through before opening. */
+.panel-left{clip-path:inset(0 50% 0 0)!important}
+.panel-right{clip-path:inset(0 0 0 50%)!important}
+.wax-seal-art{position:absolute;z-index:3;left:50%;top:46.7%;width:clamp(112px,35vw,178px);height:auto;aspect-ratio:1;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(0 5px 7px #160b0b88);transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .55s;pointer-events:none}
+.seal-hit-area{position:absolute;z-index:4;left:50%;top:46.7%;transform:translate(-50%,-50%);width:clamp(112px,35vw,178px);height:clamp(112px,35vw,178px);border:0;border-radius:50%;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tap-note{position:absolute;z-index:6;left:50%;bottom:7.5%;transform:translateX(-50%);display:inline-block;padding:10px 23px;border:1px solid #d4b574;border-radius:2px;background:#4a2028cc;color:#f3dfb6;font:italic 22px 'Great Vibes',cursive;letter-spacing:1.2px;text-shadow:0 2px 6px #1d0c10;cursor:pointer;pointer-events:auto;-webkit-tap-highlight-color:transparent;animation:sealHint 2s ease-in-out infinite}
+.tap-note:focus-visible,.seal-hit-area:focus-visible{outline:2px solid #f0d49b;outline-offset:5px}
+.cover.open .panel-left{transform:translateX(-105%) rotate(-2deg);opacity:0}
+.cover.open .panel-right{transform:translateX(105%) rotate(2deg);opacity:0}
+.cover.open .wax-seal-art{transform:translate(-50%,-100%) rotate(22deg) scale(.25);opacity:0}
+.cover.open .seal-hit-area{animation:sealLift .65s ease forwards;pointer-events:none}
+.cover.open .tap-note{opacity:0;pointer-events:none;transition:opacity .35s}
+@keyframes sealLift{0%{transform:translate(-50%,-50%) scale(1);opacity:1}45%{transform:translate(-50%,-70%) scale(1.12);opacity:1}100%{transform:translate(-50%,-110%) rotate(25deg) scale(.25);opacity:0}}
+@media(max-width:480px){.wax-seal-art{width:clamp(112px,35vw,160px)}.seal-hit-area{width:clamp(112px,35vw,160px);height:clamp(112px,35vw,160px)}.tap-note{bottom:7%;font-size:21px;padding:9px 22px}}
+@media(prefers-reduced-motion:reduce){.envelope-panel,.wax-seal-art,.seal-hit-area,.tap-note{transition:none!important;animation:none!important}}
