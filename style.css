@@ -320,3 +320,78 @@
 @media(max-width:480px){
   .script-names{font-size:clamp(48px,12vw,68px) !important;padding-inline:24px !important;}
 }
+
+
+/* DEFINITIVE FIXES for iPhone Safari */
+html, body { overflow-x: hidden; }
+#cover[hidden], section#cover[hidden] { display: none !important; }
+
+/* Keep the full childhood photo visible, without a fixed crop or zoom. */
+#story .story-photo-row {
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  width:100% !important;
+  margin:30px auto !important;
+}
+#story .story-photo-row .photo-card {
+  width:min(86vw, 360px) !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+}
+#story img.story-photo {
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  transform:none !important;
+  clip-path:none !important;
+}
+
+/* Give the calligraphic M enough room for its long left swash. */
+#getting-married,
+#getting-married .wedding-title-paper {
+  overflow:visible !important;
+}
+#getting-married .wedding-title-paper {
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+#getting-married h2.script-names {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+  padding:0 34px !important;
+  margin:0 auto !important;
+  font-size:clamp(42px, 10.5vw, 64px) !important;
+  line-height:1.25 !important;
+  letter-spacing:-0.5px !important;
+  transform:none !important;
+  overflow:visible !important;
+  clip-path:none !important;
+}
+#getting-married h2.script-names span {
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+  padding:0 12px !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  overflow:visible !important;
+  clip-path:none !important;
+  transform:none !important;
+}
+@media (max-width:390px) {
+  #getting-married h2.script-names {
+    font-size:clamp(40px, 10vw, 54px) !important;
+    padding-inline:30px !important;
+  }
+}
