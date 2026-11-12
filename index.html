@@ -13,15 +13,6 @@
 <button class="music-toggle" id="musicToggle" type="button" aria-label="Play or pause A Thousand Years" aria-pressed="false">♫ <span>Play music</span></button>
 <main>
 <section class="cover" id="cover" aria-label="Mina and Madonna wedding invitation">
-  <div class="invitation-first-page" id="invitationFirstPage">
-    <p class="small-caps">Together with our families</p>
-    <div class="cover-rule"><span>✦</span></div>
-    <p class="cover-intro">A celebration of love</p>
-    <h1 class="cover-names">Mina <em>&amp;</em><br>Madonna</h1>
-    <p class="cover-date">22 · 11 · 2026</p>
-    <p class="cover-invitation">Joyfully invite you to share in the beginning<br>of their forever</p>
-    <a class="enter-link" href="#cordially">Discover our story ↓</a>
-  </div>
   <div class="envelope-art" id="envelopeArt" aria-hidden="true">
     <div class="envelope-panel panel-left"></div>
     <div class="envelope-panel panel-right"></div>
@@ -71,7 +62,7 @@
   <p class="small-caps">A story that started long before</p>
   <h2>Little moments, one beautiful story</h2>
   <p class="body-copy">Some stories begin long before we know where they will lead. Every little moment brought us here.</p>
-  <div class="photo-row">
+  <div class="photo-row story-photo-row">
     <figure class="photo-card float"><img class="story-photo" src="childhood.jpg" alt="Mina and Madonna as children" loading="lazy"><figcaption>It started long ago…</figcaption></figure>
   </div>
   <a class="enter-link" href="#engagement">A special moment ↓</a>
@@ -121,12 +112,24 @@
 
 <section class="final-section reveal" id="rsvp">
   <div class="ring-icon">♡</div>
-  <p class="small-caps">With love</p>
-  <h2>We can't wait to celebrate with you</h2>
-  <p>Mina &amp; Madonna</p>
-  <p class="gold-line">22 · 11 · 2026</p>
+  <p class="small-caps">A little note for us</p>
+  <h2>We’d love to hear from you</h2>
+  <p class="rsvp-intro">Your wishes would make our day even more special.</p>
+  <p class="gold-line">Mina &amp; Madonna · 22 · 11 · 2026</p>
   <div class="countdown" id="countdown" aria-live="polite">Counting down to forever…</div>
-  <a class="enter-link" href="https://wa.me/?text=We%20are%20happy%20to%20celebrate%20with%20you%20on%2022%20November%202026!" target="_blank" rel="noopener">RSVP / Send your wishes ↗</a>
+  <form class="rsvp-form" id="rsvpForm">
+    <label class="rsvp-label" for="guestName">Your name</label>
+    <input id="guestName" name="name" type="text" maxlength="120" placeholder="How should we call you?" required>
+    <fieldset class="attendance-fieldset">
+      <legend class="rsvp-label">Will you be joining us for the after-party at Gatz?</legend>
+      <label class="rsvp-choice"><input type="radio" name="attendance" value="Yes, I'll be there" required><span>Yes, I’d love to celebrate with you!</span></label>
+      <label class="rsvp-choice"><input type="radio" name="attendance" value="Sorry, I can't make it"><span>Sorry, I won’t be able to make it.</span></label>
+    </fieldset>
+    <label class="rsvp-label" for="guestMessage">Leave us a little message</label>
+    <textarea id="guestMessage" name="message" rows="4" maxlength="1500" placeholder="Write your wishes here…"></textarea>
+    <button class="rsvp-submit" type="submit">Send your love ♡</button>
+    <p class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite"></p>
+  </form>
   <a class="enter-link" href="#cover">Back to the beginning ↑</a>
 </section>
 </main>

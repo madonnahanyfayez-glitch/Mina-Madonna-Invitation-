@@ -72,7 +72,7 @@
 /* Burgundy embroidered envelope cover: the two scalloped panels slide apart on seal tap */
 .cover{position:relative;min-height:100svh;height:100svh;padding:0;display:block;overflow:hidden;background:#481b25;color:#f3e6ce;isolation:isolate}
 .cover:before{content:"";position:absolute;inset:12px;border:1px solid #c7a46a;z-index:5;pointer-events:none}
-.invitation-first-page{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:45px 25px;background:radial-gradient(ellipse at center,#fff7e8 0%,#f0e1c8 72%,#dfc9a8 100%);color:#46352b;opacity:1}
+
 .invitation-first-page .small-caps{color:#75613f}
 .cover-rule{display:flex;align-items:center;gap:13px;width:min(230px,65%);margin:14px auto;color:#b89a62}
 .cover-rule:before,.cover-rule:after{content:"";height:1px;background:#b89a62;flex:1}
@@ -96,10 +96,10 @@
 .cover.open .tap-note{opacity:0;transition:opacity .3s}
 @keyframes sealLift{0%{transform:translate(-50%,-50%) scale(1);opacity:1}45%{transform:translate(-50%,-68%) scale(1.12);opacity:1}100%{transform:translate(-50%,-95%) scale(.25);opacity:0}}
 @keyframes sealHint{0%,100%{opacity:.65}50%{opacity:1}}
-@media(max-width:480px){.cover{min-height:100svh;height:100svh}.invitation-first-page{padding:38px 18px}.cover-invitation{font-size:17px}.tap-note{bottom:8%;font-size:19px}}
+@media(max-width:480px){.cover{min-height:100svh;height:100svh}.cover-invitation{font-size:17px}.tap-note{bottom:8%;font-size:19px}}
 @media(prefers-reduced-motion:reduce){.envelope-panel,.seal-hit-area{transition:none!important;animation:none!important}}
 
-.invitation-first-page{transition:filter .8s ease,transform 1s ease}.cover.open .invitation-first-page{filter:none;transform:scale(1.015)}
+.cover.open 
 
 
 /* FIX: seamless envelope opening, with a separate gold seal and two open controls */
@@ -129,30 +129,14 @@
 
 
 /* Professional cover reveal: no cream/white centre is visible under the closed envelope. */
-.invitation-first-page{
-  visibility:hidden;
-  opacity:0;
-  z-index:1;
-  background:radial-gradient(ellipse at 50% 42%,#fff9ed 0%,#f3e7d3 68%,#e7d5b9 100%);
-  transition:opacity .95s ease,visibility 0s linear .95s;
-}
-.cover.open .invitation-first-page{
-  visibility:visible;
-  opacity:1;
-  transition:opacity 1s ease .12s,visibility 0s;
-}
+
+.cover.open 
 .cover.open .envelope-art{z-index:2}
 .cover.open .panel-left{transform:translateX(-110%) rotate(-1.5deg);opacity:0}
 .cover.open .panel-right{transform:translateX(110%) rotate(1.5deg);opacity:0}
-.invitation-first-page .cover-names{
-  letter-spacing:.2px;
-  text-shadow:0 2px 0 #fff8,0 8px 22px #4b382015;
-}
-.invitation-first-page .cover-invitation{max-width:340px}
-.invitation-first-page .enter-link{
-  margin-top:22px;
-  box-shadow:0 5px 14px #4b1c2a20;
-}
+
+
+
 .gatz-details{
   max-width:360px;
   margin:30px auto 22px;
@@ -184,8 +168,8 @@
   .gatz-details strong{font-size:19px}
 }
 @media(prefers-reduced-motion:reduce){
-  .invitation-first-page{transition:none!important}
-  .cover.open .invitation-first-page{visibility:visible;opacity:1}
+  
+  .cover.open 
 }
 
 
@@ -254,3 +238,28 @@
 .engagement-caption{font-style:italic;color:#806a56;margin:12px 0 5px;}
 @media(max-width:480px){.wedding-title-page,.engagement-page,.calendar-page{padding:18px}.vintage-paper{min-height:calc(100svh - 36px);padding:28px 14px}.calendar-paper{min-height:calc(100svh - 36px);padding:34px 12px 28px}.calendar-grid{gap:clamp(8px,2.4vh,17px) 1px}.calendar-grid .weekday{font-size:15px}.engagement-photo{max-height:52svh}.script-names{font-size:clamp(76px,19vw,112px)}}
 @media(prefers-reduced-motion:reduce){.getting-married-kicker,.script-names span,.script-names i,.title-flourish,.wedding-title-page .enter-link{opacity:1!important;animation:none!important;filter:none!important;clip-path:none!important;transform:none!important}}
+
+
+/* Final polish: centered childhood photo and mobile-safe calligraphy */
+.story-photo-row{display:flex;justify-content:center;align-items:center;width:100%;max-width:100%;margin:30px auto;}
+.story-photo-row .photo-card{width:min(100%,360px);margin-inline:auto;}
+.script-names{width:100%;max-width:100%;padding-inline:14px;overflow:visible;font-size:clamp(64px,14.2vw,108px);line-height:1.02;}
+.script-names span{width:100%;max-width:100%;white-space:nowrap;overflow:visible;padding-inline:5px;}
+.wedding-title-paper{overflow:visible;}
+.final-section{background:radial-gradient(ellipse at 50% 20%,#653044 0%,#481b2b 58%,#321520 100%);border-top:1px solid #c6a66b;position:relative;}
+.final-section:before{content:"";position:absolute;inset:15px;border:1px solid #c6a66b88;pointer-events:none;}
+.final-section>*{position:relative;z-index:1;}
+.rsvp-intro{max-width:420px;margin:0 auto 16px;color:#f2e4ce;font-style:italic;line-height:1.65;}
+.rsvp-form{width:min(100%,480px);margin:28px auto 12px;padding:26px 22px;text-align:left;background:radial-gradient(ellipse at center,#fff9ee 0%,#f3eadb 72%,#e8dac7 100%);border:1px solid #c6a66b;outline:1px solid #c6a66b55;outline-offset:5px;box-shadow:0 12px 28px #16090d35;color:#44352d;}
+.rsvp-label{display:block;margin:0 0 9px;color:#70283f;font:500 15px 'Cormorant Garamond',Georgia,serif;letter-spacing:1.2px;}
+.rsvp-form input[type=text],.rsvp-form textarea{display:block;width:100%;padding:12px 13px;margin:0 0 21px;border:1px solid #c6a66b88;border-radius:0;background:#fffdf8;color:#44352d;font:17px 'Cormorant Garamond',Georgia,serif;outline:none;}
+.rsvp-form input[type=text]:focus,.rsvp-form textarea:focus{border-color:#70283f;box-shadow:0 0 0 2px #70283f18;}
+.rsvp-form input::placeholder,.rsvp-form textarea::placeholder{color:#9b8b7a;}
+.attendance-fieldset{border:0;border-top:1px solid #c6a66b;border-bottom:1px solid #c6a66b;padding:16px 0 7px;margin:0 0 21px;}
+.attendance-fieldset legend{padding:0 8px 0 0;max-width:100%;}
+.rsvp-choice{display:flex;align-items:flex-start;gap:10px;margin:12px 0;color:#5d4c40;font:17px/1.4 'Cormorant Garamond',Georgia,serif;cursor:pointer;}
+.rsvp-choice input{accent-color:#70283f;margin-top:5px;flex:0 0 auto;}
+.rsvp-submit{display:block;width:100%;padding:14px 18px;border:1px solid #c6a66b;background:#70283f;color:#fff0d9;font:12px 'Cormorant Garamond',Georgia,serif;letter-spacing:2px;text-transform:uppercase;cursor:pointer;}
+.rsvp-submit:disabled{opacity:.65;cursor:wait;}
+.rsvp-status{min-height:22px;margin:12px 0 0;text-align:center;color:#536044;font:italic 16px 'Cormorant Garamond',Georgia,serif;}
+@media(max-width:480px){.story-photo-row .photo-card{width:min(100%,330px)}.script-names{font-size:clamp(61px,14vw,92px);padding-inline:8px}.rsvp-form{padding:22px 16px}.rsvp-label{font-size:14px}}
