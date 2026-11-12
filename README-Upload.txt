@@ -1,13 +1,16 @@
-Mina & Madonna — updated wedding invitation
+Mina & Madonna — complete wedding invitation update
 
-Upload every file in this folder to the ROOT of your existing GitHub repository, replacing the old files. Keep all images and a-thousand-years.mp3 beside index.html.
+Upload every file in this folder to the ROOT of your existing GitHub repository, replacing the old files. Keep index.html, style.css, script.js, all images, and a-thousand-years.mp3 together in the repository root.
 
-Updates included:
-- Replaced the engagement photo with the new photo you sent.
-- Added your supplied A Thousand Years MP3. Music attempts to start when the guest opens the envelope; the guest can pause/play using the music button. Some browsers may require the guest to tap Play because of autoplay restrictions.
-- Shortened the Gatz invitation text and clarified that the after-party is optional.
-- Restored the Gatz Get Directions link.
+Final story order:
+1. Opening envelope and wax seal
+2. You’re Cordially Invited animated page
+3. We’re Getting Married — Mina & Madonna in flowing script
+4. November 2026 calendar with the 22nd highlighted
+5. Childhood story photos
+6. Engagement photo
+7. Church ceremony details and map
+8. Gatz after-party details, optional wording, and directions
+9. Final message and countdown
 
-Keep index.html, style.css, script.js, all image files, and a-thousand-years.mp3 together in the repository root.
-
-New in this version: a matching burgundy-framed “You’re Cordially Invited” animated page between the opening cover and story page. The engagement photo is also updated. Upload every file in this ZIP to the repository root, replacing the existing files.
+The soundtrack starts after the guest opens the envelope. Some mobile browsers may require a tap before audio can play; the Play/Pause control remains available.

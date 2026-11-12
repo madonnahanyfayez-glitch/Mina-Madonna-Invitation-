@@ -218,3 +218,39 @@
 @media(max-width:480px){.cordially-page{padding:20px}.cordially-paper{min-height:calc(100svh - 40px);gap:19px;padding:25px 10px}.cordially-word{letter-spacing:3px}.cordially-line,.cordially-bottom{letter-spacing:4px}}
 @media(prefers-reduced-motion:reduce){.cordially-line,.cordially-word,.cordially-bottom,.cordially-continue,.cordially-word span{animation:none!important;opacity:1;clip-path:none}}
 .cover.open .tap-note{display:none!important}
+
+/* The invitation now unfolds as one continuous vintage story. */
+.wedding-title-page,.engagement-page{min-height:100svh;padding:24px;display:flex;align-items:center;justify-content:center;text-align:center;background:#481b25;border-bottom:1px solid #c6a66b;}
+.vintage-paper{position:relative;width:100%;min-height:calc(100svh - 48px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:38px 22px;border:1px solid #c6a66b;outline:1px solid #c6a66b66;outline-offset:7px;background:radial-gradient(ellipse at 50% 40%,#fff9ee 0%,#f3eadb 72%,#e8dac7 100%);box-shadow:0 12px 35px #16090d55;overflow:hidden;}
+.vintage-paper:before,.calendar-paper:before{content:"";position:absolute;inset:12px;border:1px solid #c6a66b66;pointer-events:none;}
+.getting-married-kicker{margin:0 0 26px;color:#70283f;font:500 clamp(15px,3vw,22px) 'Cormorant Garamond',Georgia,serif;letter-spacing:5px;text-transform:uppercase;opacity:0;}
+.script-names{display:flex;flex-direction:column;align-items:center;gap:0;margin:0;color:#70283f;font:400 clamp(76px,17vw,126px)/.85 'Great Vibes',cursive;}
+.script-names span{display:block;opacity:0;filter:blur(3px);transform:translateY(12px);}
+.script-names i{font:italic 27px 'Cormorant Garamond',Georgia,serif;color:#b18a57;line-height:1.5;opacity:0;}
+.title-flourish{margin:28px 0 4px;color:#b18a57;font-size:24px;letter-spacing:8px;opacity:0;}
+.wedding-title-page.visible .getting-married-kicker{animation:cordiallyFade 1.4s ease forwards .25s;}
+.wedding-title-page.visible .script-names span:first-child{animation:scriptWrite 2.2s ease forwards 1s;}
+.wedding-title-page.visible .script-names i{animation:cordiallyFade 1s ease forwards 2.5s;}
+.wedding-title-page.visible .script-names span:last-child{animation:scriptWrite 2.2s ease forwards 2.9s;}
+.wedding-title-page.visible .title-flourish{animation:cordiallyFade 1.2s ease forwards 4.7s;}
+.wedding-title-page .enter-link{opacity:0;}
+.wedding-title-page.visible .enter-link{animation:cordiallyFade 1s ease forwards 5.2s;}
+@keyframes scriptWrite{0%{opacity:0;filter:blur(3px);transform:translateY(12px);clip-path:inset(0 100% 0 0)}20%{opacity:1}100%{opacity:1;filter:blur(0);transform:translateY(0);clip-path:inset(0 0 0 0)}}
+.calendar-page{min-height:100svh;padding:24px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#e9dfcd,#f6eddf);border-bottom:1px solid #c6a66b;}
+.calendar-paper{position:relative;width:100%;min-height:calc(100svh - 48px);padding:45px 22px 35px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#f8e7c7;background:radial-gradient(ellipse at 50% 20%,#7b3548 0%,#572334 55%,#3e1927 100%);box-shadow:0 12px 35px #16090d35;overflow:hidden;}
+.calendar-paper:after{content:"";position:absolute;inset:0;opacity:.12;pointer-events:none;background-image:repeating-linear-gradient(0deg,transparent 0 3px,#d9b98a 4px,transparent 5px 8px);mix-blend-mode:soft-light;}
+.calendar-month{position:relative;z-index:1;margin:0;color:#f5e7c9;font:400 clamp(40px,8vw,58px) 'Cormorant Garamond',Georgia,serif;}
+.calendar-year{position:relative;z-index:1;margin:2px 0 30px;color:#f5e7c9;font:italic 30px 'Cormorant Garamond',Georgia,serif;}
+.calendar-grid{position:relative;z-index:1;width:min(100%,540px);display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:center;justify-items:center;gap:clamp(9px,2.7vh,22px) 3px;font:600 clamp(19px,4.8vw,30px) 'Cormorant Garamond',Georgia,serif;color:#f7e7ca;}
+.calendar-grid>span{min-width:0;position:relative;display:grid;place-items:center;aspect-ratio:1;width:100%;}
+.calendar-grid .weekday{font:italic 17px 'Great Vibes',cursive;color:#e8d2a9;}
+.calendar-grid .wedding-day{color:#4b1b2b;background:#f0d99f;border-radius:50%;font-weight:600;box-shadow:0 0 0 2px #d4b675,0 0 0 6px #d4b67533;}
+.calendar-grid .wedding-day small{position:absolute;top:-9px;right:3px;color:#e8c77d;font-size:18px;text-shadow:0 1px 4px #2d101b;}
+.calendar-caption{position:relative;z-index:1;margin:30px 0 0;color:#f3dfbb;font:italic 17px 'Cormorant Garamond',Georgia,serif;letter-spacing:1px;}
+.calendar-paper .enter-link{position:relative;z-index:1;}
+.engagement-paper h2{color:#70283f;font-size:clamp(48px,9vw,64px);}
+.engagement-frame{width:min(100%,440px);margin:12px auto 10px;padding:10px;background:#fff8ec;border:1px solid #c6a66b;box-shadow:0 10px 25px #3d2c2024;}
+.engagement-photo{display:block;width:100%;max-height:58svh;object-fit:cover;object-position:center 40%;}
+.engagement-caption{font-style:italic;color:#806a56;margin:12px 0 5px;}
+@media(max-width:480px){.wedding-title-page,.engagement-page,.calendar-page{padding:18px}.vintage-paper{min-height:calc(100svh - 36px);padding:28px 14px}.calendar-paper{min-height:calc(100svh - 36px);padding:34px 12px 28px}.calendar-grid{gap:clamp(8px,2.4vh,17px) 1px}.calendar-grid .weekday{font-size:15px}.engagement-photo{max-height:52svh}.script-names{font-size:clamp(76px,19vw,112px)}}
+@media(prefers-reduced-motion:reduce){.getting-married-kicker,.script-names span,.script-names i,.title-flourish,.wedding-title-page .enter-link{opacity:1!important;animation:none!important;filter:none!important;clip-path:none!important;transform:none!important}}

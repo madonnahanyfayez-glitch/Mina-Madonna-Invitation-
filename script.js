@@ -22,7 +22,7 @@ const revealObserver = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll('.paper-section,.church-section,.gatz-section,.final-section,.reveal').forEach(section => revealObserver.observe(section));
+document.querySelectorAll('.paper-section,.church-section,.gatz-section,.final-section,.reveal,.wedding-title-page,.calendar-page,.engagement-page').forEach(section => revealObserver.observe(section));
 function updateCountdown() {
   const target = new Date('2026-11-22T19:00:00+02:00').getTime();
   const el = document.getElementById('countdown');
