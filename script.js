@@ -22,6 +22,23 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+// Envelope opening: preserve the original first page, then reveal the Cordially page.
+const coverPage = document.getElementById('cover');
+const openEnvelopeButton = document.getElementById('openBtn');
+const tapNoteButton = document.getElementById('tapNote');
+let envelopeOpened = false;
+function openEnvelope() {
+  if (envelopeOpened || !coverPage) return;
+  envelopeOpened = true;
+  coverPage.classList.add('open');
+  const cordiallyPage = document.getElementById('cordially');
+  window.setTimeout(() => {
+    if (cordiallyPage) cordiallyPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 1150);
+}
+if (openEnvelopeButton) openEnvelopeButton.addEventListener('click', openEnvelope);
+if (tapNoteButton) tapNoteButton.addEventListener('click', openEnvelope);
+
 // Wedding soundtrack: starts after the guest opens the invitation (a user gesture).
 const weddingMusic = document.getElementById('weddingMusic');
 const musicToggle = document.getElementById('musicToggle');
