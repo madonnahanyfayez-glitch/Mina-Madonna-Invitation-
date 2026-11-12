@@ -1,19 +1,3 @@
-const cover = document.getElementById('cover');
-const openBtn = document.getElementById('openBtn');
-const tapNote = document.getElementById('tapNote');
-function openInvitation() {
-  if (!cover || cover.classList.contains('open')) return;
-  cover.classList.add('open');
-  startWeddingMusic();
-  [openBtn, tapNote].forEach(button => {
-    if (button) {
-      button.setAttribute('aria-expanded', 'true');
-      button.disabled = true;
-    }
-  });
-}
-if (openBtn) openBtn.addEventListener('click', openInvitation);
-if (tapNote) tapNote.addEventListener('click', openInvitation);
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

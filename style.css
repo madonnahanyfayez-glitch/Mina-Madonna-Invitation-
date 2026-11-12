@@ -263,3 +263,60 @@
 .rsvp-submit:disabled{opacity:.65;cursor:wait;}
 .rsvp-status{min-height:22px;margin:12px 0 0;text-align:center;color:#536044;font:italic 16px 'Cormorant Garamond',Georgia,serif;}
 @media(max-width:480px){.story-photo-row .photo-card{width:min(100%,330px)}.script-names{font-size:clamp(61px,14vw,92px);padding-inline:8px}.rsvp-form{padding:22px 16px}.rsvp-label{font-size:14px}}
+
+/* Landing-page fix: skip the empty envelope screen and open on the invitation card. */
+#cover[hidden] { display: none !important; }
+.cordially-page { scroll-margin-top: 0; }
+
+
+/* Childhood portrait: show the complete original photo without cropping. */
+.story-photo{
+  width:100%;
+  height:auto !important;
+  max-height:none !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#f8f1e5;
+}
+.story-photo-row .photo-card{
+  width:min(100%,360px);
+  margin-inline:auto;
+}
+@media(max-width:480px){
+  .story-photo{height:auto !important;max-height:none !important;}
+  .story-photo-row .photo-card{width:min(100%,330px);}
+}
+
+
+/* FINAL MOBILE TYPOGRAPHY FIX: keep calligraphic capitals fully inside the frame. */
+.wedding-title-page,
+.wedding-title-paper,
+.script-names{
+  overflow: visible !important;
+  max-width: 100%;
+}
+.script-names{
+  width:100%;
+  padding: 0 22px !important;
+  margin-inline:auto;
+  box-sizing:border-box;
+  font-size:clamp(50px, 12.5vw, 78px) !important;
+  line-height:1.18 !important;
+  letter-spacing:-1px;
+  transform:scaleX(.94);
+  transform-origin:center;
+}
+.script-names span{
+  display:block;
+  width:100%;
+  max-width:100%;
+  white-space:nowrap;
+  text-align:center;
+  overflow:visible !important;
+  padding:0 10px !important;
+  box-sizing:border-box;
+}
+@media(max-width:480px){
+  .script-names{font-size:clamp(48px,12vw,68px) !important;padding-inline:24px !important;}
+}
