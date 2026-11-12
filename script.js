@@ -31,6 +31,9 @@ function openEnvelope() {
   if (envelopeOpened || !coverPage) return;
   envelopeOpened = true;
   coverPage.classList.add('open');
+  // Start the soundtrack from the same tap that opens the envelope.
+  // This is the earliest reliable user gesture for iOS/Safari autoplay rules.
+  startWeddingMusic();
   const cordiallyPage = document.getElementById('cordially');
   window.setTimeout(() => {
     if (cordiallyPage) cordiallyPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -62,7 +65,7 @@ if (musicToggle && weddingMusic) {
 
 
 // RSVP: paste your deployed Google Apps Script Web App URL here after setup.
-const RSVP_SHEET_ENDPOINT = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const RSVP_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxcvMUo03akfDIlz9HgBVETiLgAIqkQx9_1Ftf8StQ8ad10jv7jxBKdoh-PZAMyRNdT/exec';
 const rsvpForm = document.getElementById('rsvpForm');
 const rsvpStatus = document.getElementById('rsvpStatus');
 if (rsvpForm) {
